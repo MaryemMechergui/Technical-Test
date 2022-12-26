@@ -1,0 +1,18 @@
+FROM python:3.8-alpine
+#copy the data from the current directory to app directory of docker
+COPY . /app
+#set up our working directory
+WORKDIR /app
+#install packages and dependencies
+RUN pip install -r requirements.txt
+#specify the container's port
+EXPOSE 5000
+#set an entrypoint
+ENTRYPOINT ["python"]
+#run the command fapp.pt
+CMD ["fapp.py"]
+
+
+
+
+
